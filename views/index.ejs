@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FIFO</title>
+    </head>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        #tableDiv{
+            width: 50%;
+            margin: auto;
+            margin-top: 5%;
+        }
+        #table{
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border: solid 2px black;
+        }
+        #table thead{
+            background-color: black;
+            border-radius: 3px 3px 0 0;
+        }
+        #table thead td{
+            padding: 2px;
+            color: #ffff;
+        }
+        #table tbody td{
+            padding-left: 5px;
+        }
+        #costTable{
+            float: right;
+        }
+        #costTable td{
+            font-weight: bold;
+            width: 60%;
+            text-align: right;
+        }
+    </style>
+    <body>
+        <div id="tableDiv">
+            <table id="table">
+                <thead>
+                        <td>Date</td>
+                        <td>Symbol</td>
+                        <td>Type</td>
+                        <td>Quantity</td>
+                        <td>Rate</td>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i < data.length; i++){ %>
+                    <tr>
+                        <td><%= data[i].date %></td>
+                        <td><%= data[i].symbol %></td>
+                        <td><%= data[i].type %></td>
+                        <td><%= data[i].quantity %></td>
+                        <td><%= data[i].rate %></td>
+                    </tr>
+                    <% };%>
+                </tbody>
+            </table>
+            <table id="costTable">
+                <tr>
+                    <td>Total cost: </td>
+                    <td><%= totalCost %></td>
+                </tr>
+                <tr>
+                    <td>Average cost: </td>
+                    <td><%= averageCost %></td>
+                </tr>
+            </table>
+        </div>
+        
+    </body>
+</html>
